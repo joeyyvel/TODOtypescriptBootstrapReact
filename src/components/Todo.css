@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+body {
+  background-color: green;
+}
+.container {
+  width: 100vh;
+  height: 70vh;
+  margin: 15vh auto;
+}
+.todoItem {
+  margin-right: 2rem;
+}
