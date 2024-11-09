@@ -59,37 +59,45 @@ const Todo = () => {
           backgroundSize: "cover",
         }}
       >
-        <h1 className="myTodo">To-Do list</h1>
-        <input
-          type="text"
-          onChange={handleClickChange}
-          value={task}
-          id="input input-data"
-          placeholder="type add todo list here and press Enter..."
-          style={{
-            backgroundColor: "#CBD2A4",
-            height: "3rem",
-            fontSize: "23px",
-            borderRadius: "5px",
-            border: "none",
-            display: "flex",
-            flex: "10",
-          }}
-        />
-        <button className="btnEnter" onClick={AddTodo}>
-          Enter
-        </button>
+        <h1 className="myTodo">To-Do List</h1>
+
+        <div className="inputClass" style={{ display: "flex" }}>
+          <input
+            type="text"
+            onChange={handleClickChange}
+            value={task}
+            id="input input-data"
+            placeholder="type add todo list here and press Enter..."
+            style={{
+              backgroundColor: "#CBD2A4",
+              height: "3rem",
+              fontSize: "23px",
+              borderRadius: "5px",
+              border: "none",
+              flex: "10",
+              paddingLeft: "10px",
+            }}
+          />
+          <button className="btnEnter" onClick={AddTodo}>
+            Enter
+          </button>
+        </div>
+
         <div className="bodyMap" style={{ textAlign: "left" }}>
           {/*--------------- start of mapping the todo list---------------- */}
-          <ol>
+          <table>
             {todo.map((item, index) => (
               <li key={index}>
-                <span className="todoItem">
+                <span
+                  className="todoItem"
+                  // creating alert
+                  onClick={() => alert("hello world!")}
+                >
                   {item}
                   <i
                     className="fa-solid fa-trash"
                     style={{
-                      marginLeft: "25px",
+                      marginLeft: "40px",
                       color: "#EE4E4E",
                       cursor: "pointer",
                     }}
@@ -108,7 +116,7 @@ const Todo = () => {
                   <i
                     className="fa-regular fa-circle-up"
                     style={{
-                      marginLeft: "10px",
+                      marginLeft: "20px",
                       color: "blue",
                       cursor: "pointer",
                     }}
@@ -124,18 +132,19 @@ const Todo = () => {
                       Up
                     </span>{" "}
                   </i>
+                  {/* icon move down */}
                   <i
                     className="fa-regular fa-circle-down"
                     style={{
-                      marginLeft: "10px",
-                      color: "brown",
+                      marginLeft: "20px",
+                      color: "violet",
                       cursor: "pointer",
                     }}
                     onClick={() => moveDown(index)}
                   >
                     <span
                       style={{
-                        color: "brown",
+                        color: "black",
                         fontSize: "12px",
                         fontFamily: "aerial",
                       }}
@@ -151,7 +160,7 @@ const Todo = () => {
               </li>
               // the end of map list
             ))}
-          </ol>
+          </table>
         </div>
       </div>
 
