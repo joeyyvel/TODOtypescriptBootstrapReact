@@ -5,6 +5,8 @@ function App() {
     <>
       <h1 style={{ backgroundColor: "gold" }}>Hello App!</h1>
       <Todo />
+
+      <div></div>
     </>
   );
 }

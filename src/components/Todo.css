@@ -3,9 +3,9 @@
   padding: 0;
   box-sizing: content-box;
 }
-body {
+/* body {
   background-color: green;
-}
+} */
 .container {
   width: 100vh;
   height: 70vh;
@@ -13,4 +13,8 @@ body {
 }
 .todoItem {
   margin-right: 2rem;
+}
+
+button {
+  background-color: orange;
 }
