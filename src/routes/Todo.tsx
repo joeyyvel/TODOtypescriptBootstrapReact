@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "../components/Todo.css";
-import backgroundPic2 from "../image/backgroundPic.jpg";
-import "bootstrap/dist/css/bootstrap.css";
+import todoPicture from "../image/todoPicture.jpg";
 // Put any other imports below so that CSS from your
 // components takes precedence over default styles.
 const Todo = () => {
@@ -55,21 +54,33 @@ const Todo = () => {
       <div
         className="container"
         style={{
-          backgroundImage: `url(${backgroundPic2})`,
+          backgroundImage: `url(${todoPicture})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
       >
-        <h1>Todo list</h1>
+        <h1 className="myTodo">To-Do list</h1>
         <input
           type="text"
           onChange={handleClickChange}
           value={task}
           id="input input-data"
-          style={{ backgroundColor: "gold", height: "2rem", width: "25rem" }}
+          placeholder="type add todo list here and press Enter..."
+          style={{
+            backgroundColor: "#CBD2A4",
+            height: "3rem",
+            fontSize: "23px",
+            borderRadius: "5px",
+            border: "none",
+            display: "flex",
+            flex: "10",
+          }}
         />
-        <button onClick={AddTodo}>Enter</button>
-        <div>
+        <button className="btnEnter" onClick={AddTodo}>
+          Enter
+        </button>
+        <div className="bodyMap" style={{ textAlign: "left" }}>
+          {/*--------------- start of mapping the todo list---------------- */}
           <ol>
             {todo.map((item, index) => (
               <li key={index}>
@@ -77,13 +88,17 @@ const Todo = () => {
                   {item}
                   <i
                     className="fa-solid fa-trash"
-                    style={{ marginLeft: "25px", color: "#3D5300" }}
+                    style={{
+                      marginLeft: "25px",
+                      color: "#EE4E4E",
+                      cursor: "pointer",
+                    }}
                     onClick={() => deleteTask(index)}
                   >
                     <span
                       style={{
                         color: "red",
-                        fontSize: "16px",
+                        fontSize: "12px",
                         fontFamily: "aerial",
                       }}
                     >
@@ -92,31 +107,40 @@ const Todo = () => {
                   </i>
                   <i
                     className="fa-regular fa-circle-up"
-                    style={{ marginLeft: "10px" }}
+                    style={{
+                      marginLeft: "10px",
+                      color: "blue",
+                      cursor: "pointer",
+                    }}
                     onClick={() => moveUp(index)}
                   >
                     <span
                       style={{
-                        color: "green",
-                        fontSize: "16px",
+                        color: "blue",
+                        fontSize: "12px",
                         fontFamily: "aerial",
                       }}
                     >
-                      Move Up
+                      Up
                     </span>{" "}
                   </i>
                   <i
                     className="fa-regular fa-circle-down"
-                    style={{ marginLeft: "10px" }}
+                    style={{
+                      marginLeft: "10px",
+                      color: "brown",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => moveDown(index)}
                   >
                     <span
                       style={{
-                        color: "green",
-                        fontSize: "16px",
+                        color: "brown",
+                        fontSize: "12px",
                         fontFamily: "aerial",
                       }}
                     >
-                      Move Down
+                      Down
                     </span>
                   </i>
 
@@ -125,6 +149,7 @@ const Todo = () => {
                   <button onClick={() => moveDown(index)}>MoveDown</button> */}
                 </span>
               </li>
+              // the end of map list
             ))}
           </ol>
         </div>
