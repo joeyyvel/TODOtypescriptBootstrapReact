@@ -85,7 +85,7 @@ const Todo = () => {
 
         <div className="bodyMap" style={{ textAlign: "left" }}>
           {/*--------------- start of mapping the todo list---------------- */}
-          <table>
+          <ol>
             {todo.map((item, index) => (
               <li key={index}>
                 <span
@@ -160,7 +160,7 @@ const Todo = () => {
               </li>
               // the end of map list
             ))}
-          </table>
+          </ol>
         </div>
       </div>
 
