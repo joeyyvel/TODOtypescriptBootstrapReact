@@ -3,6 +3,14 @@ export const NumberGuess = () => {
 
   console.log(secretNumber);
 
+  let message = document.querySelector(".message")?.textContent;
+
+  // const displayMessage = function (message) {
+  //   document.querySelector(".message")?.textContent = message;
+  // };
+
+  // displayMessage("Start guessing...");
+
   return (
     <>
       <header>
